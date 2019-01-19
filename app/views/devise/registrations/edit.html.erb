@@ -1,0 +1,109 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Your Name",
+    autofocus: true, autocomplete: "name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :username, placeholder: "Choose a username", autofocus: true, autocomplete: "username", class: "form-control" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+  </div>
+
+  <div class="field">
+
+    <div>
+      <%= f.check_box :dairyFree, {}, true %> <%= f.label :dairyFree, "Dairy Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :eggFree, {}, true %> <%= f.label :eggFree, "Egg Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :glutenFree, {}, true %> <%= f.label :glutenFree, "Gluten Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :grainFree, {}, true %> <%= f.label :grainFree, "Grain Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :peanutFree, {}, true %> <%= f.label :peanutFree, "Peanut Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :seafoodFree, {}, true %> <%= f.label :seafoodFree, "Seafood Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :sesameFree, {}, true %> <%= f.label :sesameFree, "Sesame Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :shellfishFree, {}, true %> <%= f.label :shellfishFree, "Shellfish Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :soyFree, {}, true %> <%= f.label :soyFree, "Soy Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :sulfiteFree, {}, true %> <%= f.label :sulfiteFree, "Sulfite Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :treeNutFree, {}, true %> <%= f.label :treeNutFree, "Tree Nut Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :wheatFree, {}, true %> <%= f.label :wheatFree, "Wheat Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :ketogenic, {}, true %> <%= f.label :ketogenic, "Ketogenic" %> 
+    </div>
+    <div>
+      <%= f.check_box :paleo, {}, true %> <%= f.label :paleo, "Paleo" %> 
+    </div>
+    <div>
+      <%= f.check_box :primal, {}, true %> <%= f.label :primal, "Primal" %> 
+    </div>
+    <div>
+      <%= f.check_box :vegan, {}, true %> <%= f.label :vegan, "Vegan" %> 
+    </div>
+    <div>
+      <%= f.check_box :vegetarian, {}, true %> <%= f.label :vegetarian, "Vegetarian" %> 
+    </div>
+     
+  </div> 
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>

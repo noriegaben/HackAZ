@@ -1,0 +1,93 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Your Name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :username, placeholder: "Choose a username", class: "form-control" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= f.check_box :dairyFree, {}, true %> <%= f.label :dairyFree, "Dairy Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :eggFree, {}, true %> <%= f.label :eggFree, "Egg Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :glutenFree, {}, true %> <%= f.label :glutenFree, "Gluten Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :grainFree, {}, true %> <%= f.label :grainFree, "Grain Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :peanutFree, {}, true %> <%= f.label :peanutFree, "Peanut Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :seafoodFree, {}, true %> <%= f.label :seafoodFree, "Seafood Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :sesameFree, {}, true %> <%= f.label :sesameFree, "Sesame Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :shellfishFree, {}, true %> <%= f.label :shellfishFree, "Shellfish Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :soyFree, {}, true %> <%= f.label :soyFree, "Soy Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :sulfiteFree, {}, true %> <%= f.label :sulfiteFree, "Sulfite Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :treeNutFree, {}, true %> <%= f.label :treeNutFree, "Tree Nut Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :wheatFree, {}, true %> <%= f.label :wheatFree, "Wheat Free" %> 
+    </div>
+    <div>
+      <%= f.check_box :ketogenic, {}, true %> <%= f.label :ketogenic, "Ketogenic" %> 
+    </div>
+    <div>
+      <%= f.check_box :paleo, {}, true %> <%= f.label :paleo, "Paleo" %> 
+    </div>
+    <div>
+      <%= f.check_box :primal, {}, true %> <%= f.label :primal, "Primal" %> 
+    </div>
+    <div>
+      <%= f.check_box :vegan, {}, true %> <%= f.label :vegan, "Vegan" %> 
+    </div>
+    <div>
+      <%= f.check_box :vegetarian, {}, true %> <%= f.label :vegetarian, "Vegetarian" %> 
+    </div>
+     
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
